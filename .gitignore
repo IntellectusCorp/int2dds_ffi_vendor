@@ -1,0 +1,44 @@
+# ---- CMake / build ----
+build/
+build_*/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+install_manifest.txt
+*.cmake.in.cmake
+Testing/
+
+# ---- ROS 2 / colcon / ament ----
+install/
+log/
+.colcon/
+COLCON_IGNORE
+AMENT_IGNORE
+
+# ---- Downloaded / generated vendor artifacts ----
+# Prebuilt int2DDS FFI tarballs and extracted binaries are fetched at build time.
+*.tar.gz
+*.tgz
+*.zip
+include/int2dds-ffi.h
+include/int2dds-ffi.manifest.yaml
+lib/
+*.so
+*.so.*
+*.dylib
+*.dll
+*.lib
+*.a
+
+# ---- Editor / IDE ----
+.vscode/
+.idea/
+*.swp
+*~
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+desktop.ini
