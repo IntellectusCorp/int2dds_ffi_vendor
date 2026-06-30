@@ -72,7 +72,7 @@ if(WIN32)
 elseif(APPLE)
   set(_libname "libint2dds_ffi.dylib")
 else()
-  set(_libname "libint2dds_ffi.so")
+  set(_libname "libint2dds_ffi.so.${INT2DDS_FFI_VERSION}")
 endif()
 set(_member "${_subdir}/${_libname}")
 
@@ -152,7 +152,8 @@ endif()
 # Normalise into the package install prefix: include/ + lib/
 # ----------------------------------------------------------------------------
 install(FILES "${_header}" DESTINATION "include")
-install(FILES "${_lib}"    DESTINATION "lib")
+file(GLOB _libfiles "${_extract_dir}/${_subdir}/libint2dds_ffi.so*")
+install(FILES ${_libfiles} DESTINATION "lib")
 if(WIN32)
   # On Windows also install the import library next to the runtime DLL.
   set(_implib "${_extract_dir}/${_subdir}/int2dds_ffi.lib")
